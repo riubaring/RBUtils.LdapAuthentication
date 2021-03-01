@@ -12,7 +12,7 @@ namespace RBUtils.LdapAuthentication.Core
         public bool IsNotAllowed { get; protected set; }
 
         public static LogInResult Success => _success;
-        public static LogInResult Faile => _failed;
+        public static LogInResult Failed => _failed;
         public static LogInResult NotAllowed => _notAllowed;
     }
 }
