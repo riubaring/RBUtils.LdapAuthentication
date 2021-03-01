@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Riu Baring (riubaring@gmail.com)</Authors>
+    <Company>Riu Baring</Company>
+    <Description>An Authentication Service using System.ActiveDirectoryServices.AccountManagment.</Description>
+    <PackageProjectUrl>https://github.com/riubaring/RBUtils.LdapAuthentication.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/riubaring/RBUtils.LdapAuthentication.Core</RepositoryUrl>
+    <PackageTags>Ldap, Authentication, Service</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
