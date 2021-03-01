@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RBUtils.LdapAuthentication.Core
@@ -7,7 +9,7 @@ namespace RBUtils.LdapAuthentication.Core
     {
         HttpContext HttpContext { get; set; }
 
-        Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent);
+        Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim>? userClaims);
         Task LogOut();
     }
 }
