@@ -9,7 +9,7 @@ namespace RBUtils.LdapAuthentication.Core
     {
         HttpContext HttpContext { get; set; }
 
-        Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim>? userClaims);
-        Task LogOut();
+        Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim> userClaims = null);
+        Task LogOutAsync();
     }
 }

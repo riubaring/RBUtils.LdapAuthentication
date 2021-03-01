@@ -42,7 +42,7 @@ namespace RBUtils.LdapAuthentication.Core
             _ldapConfig = ldapAccessor.Value;
         }
 
-        public async Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim>? userClaims)
+        public async Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim> userClaims = null)
         {
             try
             {
@@ -85,7 +85,7 @@ namespace RBUtils.LdapAuthentication.Core
             return LogInResult.Failed;
         }
 
-        public async Task LogOut()
+        public async Task LogOutAsync()
         {
             await _httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
