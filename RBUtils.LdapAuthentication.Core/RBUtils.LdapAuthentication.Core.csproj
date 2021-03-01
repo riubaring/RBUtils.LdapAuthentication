@@ -12,6 +12,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>2021</Copyright>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
