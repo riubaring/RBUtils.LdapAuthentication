@@ -73,6 +73,8 @@ namespace RBUtils.LdapAuthentication.Core
                                 CookieAuthenticationDefaults.AuthenticationScheme, 
                                 new ClaimsPrincipal(claimsIdentity), 
                                 authProperties);
+
+                            return LogInResult.Success;
                         }
                     }
                 }
