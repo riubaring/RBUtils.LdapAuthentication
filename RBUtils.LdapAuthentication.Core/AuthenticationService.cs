@@ -17,22 +17,22 @@ namespace RBUtils.LdapAuthentication.Core
     {
         private readonly LdapConfig _ldapConfig;
         private readonly IHttpContextAccessor _contextAccessor;
-        private HttpContext _httpContext;
+        private HttpContext _context;
 
-        public HttpContext HttpContext
+        public HttpContext Context
         {
             get
             {
-                var ctx = _httpContext ?? _contextAccessor?.HttpContext;
-                if(ctx == null)
+                var context = _context ?? _contextAccessor?.HttpContext;
+                if(context == null)
                 {
                     throw new InvalidOperationException("HttpContext is required.");
                 }
-                return ctx;
+                return context;
             }
             set
             {
-                _httpContext = value;
+                _context = value;
             }
         }
 
@@ -69,7 +69,7 @@ namespace RBUtils.LdapAuthentication.Core
                                 this.GetType().Name);
 
                             var authProperties = GetAuthenticationProperties(isPersistent);
-                            await HttpContext.SignInAsync(
+                            await Context.SignInAsync(
                                 CookieAuthenticationDefaults.AuthenticationScheme, 
                                 new ClaimsPrincipal(claimsIdentity), 
                                 authProperties);
@@ -89,7 +89,7 @@ namespace RBUtils.LdapAuthentication.Core
 
         public async Task LogOutAsync()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await Context.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
         private AuthenticationProperties GetAuthenticationProperties(bool isPersistent = false)

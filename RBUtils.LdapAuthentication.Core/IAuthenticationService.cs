@@ -7,7 +7,7 @@ namespace RBUtils.LdapAuthentication.Core
 {
     public interface IAuthenticationService
     {
-        HttpContext HttpContext { get; set; }
+        HttpContext Context { get; set; }
 
         Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim> userClaims = null);
         Task LogOutAsync();
