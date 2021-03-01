@@ -65,11 +65,11 @@ namespace RBUtils.LdapAuthentication.Core
                             };
 
                             var claimsIdentity = new ClaimsIdentity(
-                                authenticatedUserClaims.Concat(userClaims), CookieAuthenticationDefaults.AuthenticationScheme);
-                            // Roles are to be added to claimsIdentity before sigining in to HttpContext
+                                userClaims == null ? authenticatedUserClaims : authenticatedUserClaims.Concat(userClaims), 
+                                this.GetType().Name);
 
                             var authProperties = GetAuthenticationProperties(isPersistent);
-                            await _httpContext.SignInAsync(
+                            await HttpContext.SignInAsync(
                                 CookieAuthenticationDefaults.AuthenticationScheme, 
                                 new ClaimsPrincipal(claimsIdentity), 
                                 authProperties);
@@ -89,7 +89,7 @@ namespace RBUtils.LdapAuthentication.Core
 
         public async Task LogOutAsync()
         {
-            await _httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
         private AuthenticationProperties GetAuthenticationProperties(bool isPersistent = false)
