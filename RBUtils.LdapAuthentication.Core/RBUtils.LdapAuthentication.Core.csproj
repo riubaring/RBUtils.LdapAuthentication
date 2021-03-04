@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Authors>Riu Baring (riubaring@gmail.com)</Authors>
     <Company>Riu Baring</Company>
     <Description>An LDAP Authentication Service to help to validate user's credentials against an Active Directory.</Description>
@@ -12,12 +12,16 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>2021</Copyright>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
+    <PackageReleaseNotes>Changed target framework to .Net 5.0
+Added summaries
+Added samples for appsettings.json, Startup.cs, and Login razor page</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
     <PackageReference Include="System.DirectoryServices.AccountManagement" Version="5.0.0" />
   </ItemGroup>
 
