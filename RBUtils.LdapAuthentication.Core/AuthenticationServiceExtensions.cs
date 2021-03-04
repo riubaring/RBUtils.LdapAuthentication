@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RBUtils.LdapAuthentication.Core.Models;
-using System;
-using Microsoft.Extensions.Options.ConfigurationExtensions;
 
 namespace RBUtils.LdapAuthentication.Core
 {
@@ -15,7 +13,7 @@ namespace RBUtils.LdapAuthentication.Core
             services.Configure<LdapConfig>(configuration.GetSection("Ldap"));
 
             // Load Cookie configuration. Use default, if null
-            var cookieConfig = configuration.GetSection("Cookie").Get<CookiesConfig>();
+            var cookieConfig = configuration.GetSection("Cookies").Get<CookiesConfig>();
             services.AddAuthentication(
                 CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
