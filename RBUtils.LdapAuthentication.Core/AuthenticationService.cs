@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -63,6 +64,7 @@ namespace RBUtils.LdapAuthentication.Core
         /// <param name="userClaims">A <see cref="Claim"/> collection of claim type and value.</param>
         /// <returns>The task object representing the asynchronous operation containing the <see name="LogInResult"/>
         /// for the sign-in attempt.</returns>
+        [SupportedOSPlatform("windows")]
         public async Task<LogInResult> LogInAsync(string userName, string plainPassword, bool isPersistent, List<Claim> userClaims = null)
         {
             try
@@ -76,7 +78,6 @@ namespace RBUtils.LdapAuthentication.Core
                         if(authenticatedUser != null)
                         {
                             // Please refer https://docs.microsoft.com/en-us/aspnet/core/security/authentication/cookie?view=aspnetcore-5.0
-
                             var authenticatedUserClaims = new List<Claim>
                             {
                                 new Claim(ClaimTypes.Name, authenticatedUser.SamAccountName), // Other options: UserPrincipalName, EmployeeId
