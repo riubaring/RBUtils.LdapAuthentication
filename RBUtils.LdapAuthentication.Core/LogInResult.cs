@@ -7,9 +7,9 @@ namespace RBUtils.LdapAuthentication.Core
     /// </summary>
     public class LogInResult
     {
-        private static readonly LogInResult _success = new LogInResult { Succeeded = true };
-        private static readonly LogInResult _failed = new LogInResult();
-        private static readonly LogInResult _notAllowed = new LogInResult { IsNotAllowed = true };
+        private static readonly LogInResult _success = new() { Succeeded = true };
+        private static readonly LogInResult _failed = new();
+        private static readonly LogInResult _notAllowed = new() { IsNotAllowed = true };
 
         /// <summary>
         /// Returns a flag indicating whether or not login was successful.
