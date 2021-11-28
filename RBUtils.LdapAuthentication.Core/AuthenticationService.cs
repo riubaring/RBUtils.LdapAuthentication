@@ -101,9 +101,9 @@ namespace RBUtils.LdapAuthentication.Core
                     }
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                throw ex;
+                throw;
             }
 
             return LogInResult.Failed;
