@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
-using RBUtils.LdapAuthentication.Core.Models;
-using System;
-using System.Collections.Generic;
+﻿global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.AspNetCore.Authentication.Cookies;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.Extensions.Options;
+global using RBUtils.LdapAuthentication.Core.Models;
+global using System;
+global using System.Collections.Generic;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Runtime.Versioning;

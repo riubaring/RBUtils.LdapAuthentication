@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RBUtils.LdapAuthentication.Core
+﻿namespace RBUtils.LdapAuthentication.Core
 {
     /// <summary>
     /// Represents the result of a login operation.

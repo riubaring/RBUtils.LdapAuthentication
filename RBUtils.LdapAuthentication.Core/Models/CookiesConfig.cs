@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RBUtils.LdapAuthentication.Core.Models
+﻿namespace RBUtils.LdapAuthentication.Core.Models
 {
     /// <summary>
     /// A model for cookies configuration for <see cref="CookieAuthenticationOptions"/>.

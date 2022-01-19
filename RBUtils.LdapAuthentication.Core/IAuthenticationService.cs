@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace RBUtils.LdapAuthentication.Core
