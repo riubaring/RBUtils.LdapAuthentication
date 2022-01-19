@@ -11,11 +11,9 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>2021</Copyright>
-    <Version>1.0.7</Version>
-    <PackageReleaseNotes>Changed target framework to .Net 5.0
-Added summaries
-Added samples for appsettings.json, Startup.cs, and Login razor page</PackageReleaseNotes>
+    <Copyright>2022</Copyright>
+    <Version>1.0.8</Version>
+    <PackageReleaseNotes>Set target framework to .Net 6.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
